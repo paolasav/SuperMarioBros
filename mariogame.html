@@ -78,14 +78,26 @@ background-attachment: fixed;
         #nextbtn4{
             display:none;
         }
-        .ending{
+        .endimg{
             width: 250px; height: 120px;
         }
         .playagain{
             width: 100px;
         }
+        #pagnbtn{
+            width: 100px; display: none;
+        }
+        #pagnbtn2{
+            width: 100px; display: none;
+        }
+        #pagnbtn3{
+            width: 100px; display: none;
+        }
+        #pagnbtn4{
+            width: 100px; display: none;
+        }
     </style>
-<body background="mariobckgrnd1.png">
+<body background=mariobckgrnd1.png">
     <table id="levels">
         <td class="leveltd" id="level1"> Level 1 </td>
         <td class="leveltd" id="level2"> Level 2 </td>
@@ -107,6 +119,7 @@ background-attachment: fixed;
         <tr><button onclick="incorrectans3()" id="incorrectans3">40</button></tr><br><br>
         <tr><b id="qstatus"></b></tr><br><br>
         <tr><button id="nextbtn" onclick="nextbtn1()">Next</button></tr>
+        <tr><button id="pagnbtn" onclick=" window.location.href = 'index.html'">Play Again!</button></tr>
         <br>
     </table></div>
     <div id="qlevel2"><table>
@@ -118,17 +131,19 @@ background-attachment: fixed;
         <tr><button onclick="incorrectans6()" id="incorrectans6">45</button></tr><br><br>
         <tr><b id="qstatus2"></b></tr><br><br>
         <tr><button id="nextbtn2" onclick="nextbtn2()">Next</button></tr>
+        <tr><button id="pagnbtn2" onclick=" window.location.href = 'index.html'">Play Again!</button></tr>
         <br>
     </table></div>
     <div id="qlevel3"><table>
         <br>
-        <tr><button class="question"> 42 / 7 = ?</button></tr><br><br>
+        <tr><button class="question"> 56 / 5 = ?</button></tr><br><br>
         <tr><button onclick="incorrectans7()" id="incorrectans7">9.4</button></tr>
         <tr><button onclick="incorrectans8()" id="incorrectans8">8.3</button></tr>
-        <tr><button onclick= "correctans3()" id="correctans3" >6</button></tr>
+        <tr><button onclick= "correctans3()" id="correctans3" >11.2</button></tr>
         <tr><button onclick="incorrectans9()" id="incorrectans9">9</button></tr><br><br>
         <tr><b id="qstatus3"></b></tr><br><br>
         <tr><button id="nextbtn3" onclick="nextbtn3()">Next</button></tr>
+        <tr><button id="pagnbtn3" onclick=" window.location.href = 'index.html'">Play Again!</button></tr>
         <br>
     </table></div>
     <div id="qlevel4"><table>
@@ -140,6 +155,7 @@ background-attachment: fixed;
         <tr><button onclick= "correctans4()" id="correctans4" >8</button></tr><br><br>
         <tr><b id="qstatus4"></b></tr><br><br>
         <tr><button id="nextbtn4" onclick="nextbtn4()">Next</button></tr>
+        <tr><button id="pagnbtn4" onclick=" window.location.href = 'index.html'">Play Again!</button></tr>
         <br>
     </table></div>
     <div id="qend">
@@ -165,13 +181,14 @@ background-attachment: fixed;
     }
     function incorrectans1(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans2").style.display = "none";document.getElementById("incorrectans3").style.display = "none";
+        document.getElementById("pagnbtn").style.display = "block"
     }
     function incorrectans2(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans1").style.display = "none";document.getElementById("incorrectans3").style.display = "none";
-    }
+        document.getElementById("pagnbtn").style.display = "block"}
     function incorrectans3(){
         document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans2").style.display = "none";document.getElementById("incorrectans1").style.display = "none"
-        }
+        document.getElementById("pagnbtn").style.display = "block"}
     //Question 2
     function nextbtn2(){
     document.getElementById("level3").style.backgroundColor = "rgb(97, 97, 97)";
@@ -182,13 +199,13 @@ background-attachment: fixed;
     }
     function incorrectans4(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans5").style.display = "none";document.getElementById("incorrectans6").style.display = "none";
-    }
+        document.getElementById("pagnbtn2").style.display = "block";}
     function incorrectans5(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans4").style.display = "none";document.getElementById("incorrectans6").style.display = "none";
-    }
+        document.getElementById("pagnbtn2").style.display = "block";}
     function incorrectans6(){
         document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans5").style.display = "none";document.getElementById("incorrectans4").style.display = "none"
-        }
+        document.getElementById("pagnbtn2").style.display = "block";}
          //Question 3
          function nextbtn3(){
     document.getElementById("level4").style.backgroundColor = "rgb(97, 97, 97)";
@@ -199,13 +216,13 @@ background-attachment: fixed;
     }
     function incorrectans7(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans8").style.display = "none";document.getElementById("incorrectans9").style.display = "none";
-    }
+        document.getElementById("pagnbtn3").style.display = "block";}
     function incorrectans8(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans7").style.display = "none";document.getElementById("incorrectans9").style.display = "none";
-    }
+        document.getElementById("pagnbtn3").style.display = "block";}
     function incorrectans9(){
         document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans8").style.display = "none";document.getElementById("incorrectans7").style.display = "none"
-        }
+        document.getElementById("pagnbtn3").style.display = "block";}
 //Question 4
 function nextbtn4(){
     document.getElementById("tdend").style.backgroundColor = "rgb(97, 97, 97)";
@@ -216,13 +233,13 @@ function nextbtn4(){
     }
     function incorrectans10(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans11").style.display = "none";document.getElementById("incorrectans12").style.display = "none";
-    }
+        document.getElementById("pagnbtn4").style.display = "block";}
     function incorrectans11(){
         document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans10").style.display = "none";document.getElementById("incorrectans12").style.display = "none";
-    }
+        document.getElementById("pagnbtn4").style.display = "block";}
     function incorrectans12(){
         document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans11").style.display = "none";document.getElementById("incorrectans10").style.display = "none"
-        }
+        document.getElementById("pagnbtn4").style.display = "block";}
         document.onkeydown = detectKey;
 function detectKey(e) {
     var posLeft = document.getElementById('princhar').offsetLeft;
