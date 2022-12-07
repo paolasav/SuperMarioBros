@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            background-size: cover;
+        }
+        #mariochar{
+            margin-top: 285px;
+        }
+        .tdspace{
+            width: 100px; height: 25px;
+        }
+        .leveltd{
+            background-color: rgb(65, 64, 64); width: 100px; height: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; font-size: 14px; color: white; 
+        }
+        #level1{
+            background-color: rgb(97, 97, 97);
+        }
+        .pointd{
+            background-color: rgb(65, 64, 64); width: 200px; height: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; font-size: 14px; color: white; 
+        }
+        #qlevel1{
+            background-color: rgba(65, 64, 64, 0.829); width: 300px; height: 135px; align-items: center; text-align: center;
+        }
+        #qlevel2{
+            background-color: rgba(65, 64, 64, 0.829); width: 300px; height: 135px; align-items: center; text-align: center; display: none;
+        }
+        #qlevel3{
+            background-color: rgba(65, 64, 64, 0.829); width: 300px; height: 135px; align-items: center; text-align: center; display: none;
+        }
+        #qlevel4{
+            background-color: rgba(65, 64, 64, 0.829); width: 300px; height: 135px; align-items: center; text-align: center; display: none;
+        }
+        #qend{
+            background-color: rgba(65, 64, 64, 0.829); width: 300px; height: 150px; align-items: center; text-align: center; display: none;
+        }
+        button{
+            width: 65px; height: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 14px;
+        }
+        .question{
+            width: 260px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #qstatus{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 14px;
+        }
+        #qstatus2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 14px;
+        }
+        #qstatus3{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 14px;
+        }
+        #qstatus4{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 14px;
+        }
+        #nextbtn{
+            display:none;
+        }
+        #nextbtn2{
+            display:none;
+        }
+        #nextbtn3{
+            display:none;
+        }
+        #nextbtn4{
+            display:none;
+        }
+        .endimg{
+            width: 250px; height: 120px;
+        }
+        .playagain{
+            width: 100px;
+        }
+    </style>
+<body background="Images/mariobckgrnd1.png">
+    <table id="levels">
+        <td class="leveltd" id="level1"> Level 1 </td>
+        <td class="leveltd" id="level2"> Level 2 </td>
+        <td class="leveltd" id="level3"> Level 3 </td>
+        <td class="leveltd" id="level4"> Level 4 </td>
+        <td class="leveltd" id="tdend"> END </td>
+        <td class="tdspace"></td>
+        <td class="tdspace"></td>
+        <td class="tdspace"></td>
+        <td class="tdspace"></td>
+        <td class="pointd">Points: <b id="pointsum"></b> / 4</td>
+    </table>
+    <div id="qlevel1"><table>
+        <br>
+        <tr><button class="question"> 18 + 9 = ?</button></tr><br><br>
+        <tr><button onclick="correctans()" id="correctans">27</button></tr>
+        <tr><button onclick="incorrectans1()" id="incorrectans1">25</button></tr>
+        <tr><button onclick="incorrectans2()" id="incorrectans2">29</button></tr>
+        <tr><button onclick="incorrectans3()" id="incorrectans3">40</button></tr><br><br>
+        <tr><b id="qstatus"></b></tr><br><br>
+        <tr><button id="nextbtn" onclick="nextbtn1()">Next</button></tr>
+        <br>
+    </table></div>
+    <div id="qlevel2"><table>
+        <br>
+        <tr><button class="question"> 5 * 6 = ?</button></tr><br><br>
+        <tr><button onclick="incorrectans4()" id="incorrectans4">36</button></tr>
+        <tr><button onclick="incorrectans5()" id="incorrectans5">35</button></tr>
+        <tr><button onclick= "correctans2()" id="correctans2" >30</button></tr>
+        <tr><button onclick="incorrectans6()" id="incorrectans6">45</button></tr><br><br>
+        <tr><b id="qstatus2"></b></tr><br><br>
+        <tr><button id="nextbtn2" onclick="nextbtn2()">Next</button></tr>
+        <br>
+    </table></div>
+    <div id="qlevel3"><table>
+        <br>
+        <tr><button class="question"> 56 / 5 = ?</button></tr><br><br>
+        <tr><button onclick="incorrectans7()" id="incorrectans7">9.4</button></tr>
+        <tr><button onclick="incorrectans8()" id="incorrectans8">8.3</button></tr>
+        <tr><button onclick= "correctans3()" id="correctans3" >11.2</button></tr>
+        <tr><button onclick="incorrectans9()" id="incorrectans9">9</button></tr><br><br>
+        <tr><b id="qstatus3"></b></tr><br><br>
+        <tr><button id="nextbtn3" onclick="nextbtn3()">Next</button></tr>
+        <br>
+    </table></div>
+    <div id="qlevel4"><table>
+        <br>
+        <tr><button class="question"> √64 = ?</button></tr><br><br>
+        <tr><button onclick="incorrectans10()" id="incorrectans10">10</button></tr>
+        <tr><button onclick="incorrectans11()" id="incorrectans11">9</button></tr>
+        <tr><button onclick="incorrectans12()" id="incorrectans12">7</button></tr>
+        <tr><button onclick= "correctans4()" id="correctans4" >8</button></tr><br><br>
+        <tr><b id="qstatus4"></b></tr><br><br>
+        <tr><button id="nextbtn4" onclick="nextbtn4()">Next</button></tr>
+        <br>
+    </table></div>
+    <div id="qend">
+        <table>
+            <br>
+            <img class="endimg" src="Images/endcongrats.png">
+            <br><br>
+            <tr><button class="playagain" onclick=" window.location.href = 'index.html'">Play Again!</button></tr>
+        </table>
+    </div>
+    <div id="mariochar"><img src="Images/mariocharacter.png"></div>
+</body>
+<script>
+      //Question 1
+    function nextbtn1(){
+    document.getElementById("level2").style.backgroundColor = "rgb(97, 97, 97)";
+    document.getElementById("qlevel1").style.display = "none"; document.getElementById("qlevel2").style.display = "block";
+    }
+    function correctans(){
+        document.getElementById("pointsum").innerHTML= +1; document.getElementById("mariochar").style.marginLeft = "200px"; document.getElementById("qstatus").innerHTML= "Correct!"; document.getElementById("qstatus").style.color = "rgb(9, 255, 0)"; document.getElementById("incorrectans1").style.display = "none";
+        document.getElementById("incorrectans2").style.display = "none";document.getElementById("incorrectans3").style.display = "none"; document.getElementById("nextbtn").style.display = "block";
+    }
+    function incorrectans1(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans2").style.display = "none";document.getElementById("incorrectans3").style.display = "none";
+    }
+    function incorrectans2(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans1").style.display = "none";document.getElementById("incorrectans3").style.display = "none";
+    }
+    function incorrectans3(){
+        document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus").innerHTML= "Incorrect!"; document.getElementById("qstatus").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans").style.display = "none";document.getElementById("incorrectans2").style.display = "none";document.getElementById("incorrectans1").style.display = "none"
+        }
+    //Question 2
+    function nextbtn2(){
+    document.getElementById("level3").style.backgroundColor = "rgb(97, 97, 97)";
+    document.getElementById("qlevel2").style.display = "none"; document.getElementById("qlevel3").style.display = "block";}
+        function correctans2(){
+        document.getElementById("pointsum").innerHTML= +2; document.getElementById("mariochar").style.marginLeft = "400px"; document.getElementById("qstatus2").innerHTML= "Correct!"; document.getElementById("qstatus2").style.color = "rgb(9, 255, 0)"; document.getElementById("incorrectans4").style.display = "none";
+        document.getElementById("incorrectans5").style.display = "none";document.getElementById("incorrectans6").style.display = "none"; document.getElementById("nextbtn2").style.display = "block";
+    }
+    function incorrectans4(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans5").style.display = "none";document.getElementById("incorrectans6").style.display = "none";
+    }
+    function incorrectans5(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans4").style.display = "none";document.getElementById("incorrectans6").style.display = "none";
+    }
+    function incorrectans6(){
+        document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus2").innerHTML= "Incorrect!"; document.getElementById("qstatus2").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans2").style.display = "none";document.getElementById("incorrectans5").style.display = "none";document.getElementById("incorrectans4").style.display = "none"
+        }
+         //Question 3
+         function nextbtn3(){
+    document.getElementById("level4").style.backgroundColor = "rgb(97, 97, 97)";
+    document.getElementById("qlevel3").style.display = "none"; document.getElementById("qlevel4").style.display = "block";}
+         function correctans3(){
+        document.getElementById("pointsum").innerHTML= +3; document.getElementById("mariochar").style.marginLeft = "600px"; document.getElementById("qstatus3").innerHTML= "Correct!"; document.getElementById("qstatus3").style.color = "rgb(9, 255, 0)"; document.getElementById("incorrectans7").style.display = "none";
+        document.getElementById("incorrectans8").style.display = "none";document.getElementById("incorrectans9").style.display = "none"; document.getElementById("nextbtn3").style.display = "block";
+    }
+    function incorrectans7(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans8").style.display = "none";document.getElementById("incorrectans9").style.display = "none";
+    }
+    function incorrectans8(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans7").style.display = "none";document.getElementById("incorrectans9").style.display = "none";
+    }
+    function incorrectans9(){
+        document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus3").innerHTML= "Incorrect!"; document.getElementById("qstatus3").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans3").style.display = "none";document.getElementById("incorrectans8").style.display = "none";document.getElementById("incorrectans7").style.display = "none"
+        }
+//Question 4
+function nextbtn4(){
+    document.getElementById("tdend").style.backgroundColor = "rgb(97, 97, 97)";
+    document.getElementById("qlevel4").style.display = "none"; document.getElementById("qend").style.display = "block";}
+         function correctans4(){
+        document.getElementById("pointsum").innerHTML= +4; document.getElementById("mariochar").style.marginLeft = "850px"; document.getElementById("mariochar").style.marginTop = "135px"; document.getElementById("qstatus4").innerHTML= "Correct!"; document.getElementById("qstatus4").style.color = "rgb(9, 255, 0)"; document.getElementById("incorrectans10").style.display = "none";
+        document.getElementById("incorrectans11").style.display = "none";document.getElementById("incorrectans12").style.display = "none"; document.getElementById("nextbtn4").style.display = "block";
+    }
+    function incorrectans10(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans11").style.display = "none";document.getElementById("incorrectans12").style.display = "none";
+    }
+    function incorrectans11(){
+        document.getElementById("pointsum").innerHTML= 0; document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans10").style.display = "none";document.getElementById("incorrectans12").style.display = "none";
+    }
+    function incorrectans12(){
+        document.getElementById("pointsum").innerHTML= 0;  document.getElementById("qstatus4").innerHTML= "Incorrect!"; document.getElementById("qstatus4").style.color = "rgb(255, 0, 0)"; document.getElementById("correctans4").style.display = "none";document.getElementById("incorrectans11").style.display = "none";document.getElementById("incorrectans10").style.display = "none"
+        }
+</script>
+</html>
